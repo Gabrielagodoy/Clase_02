@@ -19,6 +19,7 @@ https://developer.mozilla.org/es/docs/Web/CSS/At-rule#Grupos_de_Reglas_Condicion
     background: rgba(30, 200, 190, 1.00);
   }
 }
+/* Puede ser from y to o con porcentajes 0% a 100%*/
 /*Los tres primeros valores de RGB van de 0 a 255 y A corresponde al alfa que va de 0 a 1.El alfa es transparencia. También se puede escribir sin alfa (la A), como rgb (255, 200, 150). O también se pueden escribir los colores como #DDEECC.
 0                     255
 0          9A.         F
@@ -37,11 +38,12 @@ body {
   line-height: 1.75;
   overflow-x: hidden;
   /* a continuación llamaré a la animación definada más arriba */
+  /* versión abreviada animation: agua 3s ease-in infinite alternate; */
   animation-name: agua;
-  animation-duration: 5s;
-  animation-timing-function: ease;
+  animation-duration: 3s;
+  animation-timing-function: ease; /*time function: ease que agarra vuelo o puede ser linear (https://stackoverflow.com/questions/39735012/how-to-make-custom-css-animation-transition-timing-function)*/
   animation-iteration-count: infinite;
-  animation-direction: alternate;
+  animation-direction: alternate; /*dirección. Si se quita alternate empieza la animación desde el inicio cada vez que termina */
   /* más sobre animación en https://developer.mozilla.org/es/docs/Web/CSS/animation */
 }
 
@@ -51,8 +53,9 @@ a{
 }
 
 a:hover{
-  color:#000;
-  text-decoration: none;
+  color:red;
+  background: black;
+  text-decoration: none; /*line-through o none*/
 }
 
 :lang(en){
@@ -71,7 +74,7 @@ pre{
 pre:hover{
   background:rgba(255,255,255,0.4);
   transition: background ease 1s;
-  cursor:crosshair;
+  cursor:help; /*o help,o pointer, se puede poner una imagen tambien*/
 }
 
 code{
@@ -103,7 +106,6 @@ code{
 .texto{
   padding:2rem 6rem 4rem 6rem;
 }
-
 ul li:nth-of-type(1):after {
   font-weight: bold;
   color:#003;
